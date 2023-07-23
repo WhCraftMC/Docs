@@ -15,7 +15,7 @@ module.exports = {
     },
     {
       href: links.githubLink,
-      label: 'GitHub',
+      className: 'nav-icon nav-icon-github',
       position: 'right',
     },
   ],

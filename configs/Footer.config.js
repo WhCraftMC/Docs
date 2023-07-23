@@ -3,14 +3,14 @@ const links = require('./Links.config');
 module.exports = {
   style: 'dark',
   links: [{
-      title: 'Community',
+      title: '社区',
       items: [{
-        label: 'Forums',
+        label: '论坛',
         href: 'https://forums.whcraftmc.tk',
       }, ],
     },
     {
-      title: 'Documentation',
+      title: '文档',
       items: [{
           label: 'Docs',
           to: links.URL,
@@ -18,9 +18,9 @@ module.exports = {
       ],
     },
     {
-      title: 'More',
+      title: '更多',
       items: [{
-          label: 'Main Site',
+          label: '主站点',
           href: 'https://www.whcraftmc.tk',
         },
         {
@@ -30,5 +30,5 @@ module.exports = {
       ],
     },
   ],
-  copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+  copyright: `Copyright © ${new Date().getFullYear()} WhCraftMC Team. Built with Docusaurus.`,
 }
