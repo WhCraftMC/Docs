@@ -1,10 +1,6 @@
 name: "Build Artifact"
 
 on:
-  push:
-    branches:
-      - main
-
   workflow_call:
     inputs:
       preview:
@@ -38,11 +34,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "${{ env.NODE_VERSION }}"
-          cache: "npm install"
+          cache: "yarn"
       - name: "Install Dependencies"
-        run: "npm install --immutable"
+        run: "yarn install --immutable"
       - name: "Build Docs"
-        run: npm run build
+        run: yarn build
       - name: "Upload HTML"
         uses: actions/upload-artifact@v3
         with:
