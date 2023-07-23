@@ -37,11 +37,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "${{ env.NODE_VERSION }}"
-          cache: "yarn"
+          cache: "npm"
       - name: "Install Dependencies"
-        run: "yarn install --immutable"
+        run: "npm install --immutable"
       - name: "Build Docs"
-        run: yarn build
+        run: npm build
       - name: "Upload HTML"
         uses: actions/upload-artifact@v3
         with:
