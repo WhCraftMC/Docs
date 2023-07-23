@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      
+
   workflow_call:
     inputs:
       preview:
@@ -38,9 +38,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "${{ env.NODE_VERSION }}"
-          cache: "npm i"
+          cache: "npm install"
       - name: "Install Dependencies"
-        run: "npm i --immutable"
+        run: "npm install --immutable"
       - name: "Build Docs"
         run: npm run build
       - name: "Upload HTML"
