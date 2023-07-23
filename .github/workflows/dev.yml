@@ -1,6 +1,9 @@
 name: "Build Artifact"
 
 on:
+  push:
+    branches:
+      - main
   workflow_call:
     inputs:
       preview:
