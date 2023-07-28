@@ -38,7 +38,7 @@ const config = {
     [
       "content-docs",
       {
-        ...docsCommon,
+        //...docsCommon,
         id: "FastLimbo",
         path: "docs/FastLimbo",
         routeBasePath: "docs/Fastlimbo",
