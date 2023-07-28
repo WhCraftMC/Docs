@@ -7,7 +7,7 @@ function Project(project: Project) {
   return (
     <div className={css.project}>
       <div className={css.flex}>
-        <h3 className="title">
+        <h3 className={css.title}>
           {project.title}
         </h3>
         <p>{project.description}</p>
@@ -36,6 +36,5 @@ export default function Projects(): JSX.Element {
 interface Project {
   title: string;
   description: string;
-  repo: string;
   link: string;
 }

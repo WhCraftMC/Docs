@@ -11,6 +11,12 @@
   align-items: center;
 }
 
+.title {
+  padding-right: 1.0em;
+  color: var(--ifm-color-primary-dark);
+  margin: 0;
+}
+
 .project p {
   padding-right: 0.8em;
   color: var(--ifm-color-emphasis-800);
@@ -25,7 +31,7 @@
 
 .projectsContainer {
   width: 85%;
-  max-width: 650px;
+  max-width: 500px;
   padding-bottom: 8em;
   padding-top: 0;
 }
