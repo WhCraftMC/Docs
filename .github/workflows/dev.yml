@@ -21,7 +21,7 @@ on:
         type: string
 
 env:
-  NODE_VERSION: "17"
+  NODE_VERSION: "20"
   DEPLOY_PREVIEW: ${{ inputs.preview }}
   PREVIEW_URL: ${{ inputs.url }}
   PREVIEW_BASE_URL: ${{ inputs.baseurl }}
