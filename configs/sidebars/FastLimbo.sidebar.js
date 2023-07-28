@@ -1,6 +1,6 @@
 const { SidebarsConfig } = require("@docusaurus/plugin-content-docs");
 
-const FastLimbo = {
+const FastLimbo : SidebarsConfig = {
   primary: [
     'README',
   ],
