@@ -42,7 +42,7 @@ const config = {
         id: "FastLimbo",
         path: "docs/FastLimbo",
         routeBasePath: "docs/Fastlimbo",
-        sidebarPath: require.resolve("./configs/sidebars/FastLimbo.sidebar.js"),
+        sidebarPath: require.resolve("./configs/sidebars/FastLimbo.sidebar.ts"),
       },
     ],
   ],
