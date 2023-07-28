@@ -34,6 +34,19 @@ const config = {
   // to replace "en" with "zh-Hans"?
   i18n: i18n,
 
+  plugins: [
+    [
+      "content-docs",
+      {
+        ...docsCommon,
+        id: "FastLimbo",
+        path: "docs/FastLimbo",
+        routeBasePath: "docs/Fastlimbo",
+        sidebarPath: require.resolve("./configs/sidebars/FastLimbo.sidebar"),
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
