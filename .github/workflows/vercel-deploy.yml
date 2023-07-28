@@ -3,23 +3,19 @@ name: Deploy to Vercel
 on:
   push:
     branches:
-      - main
+      - main  # 将这里的分支名改为你要部署的分支名
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20'
-
-      - name: Build
-        run: npm install && npm run build
-
-      - name: Deploy to Vercel
-        run: npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
+    - name: Deploy to Vercel
+      uses: amondnet/vercel-action@v20
+      with:
+        vercel-token: ${{ secrets.VERCEL_TOKEN }}  # 将这里的secrets.VERCEL_TOKEN改为你在GitHub仓库中设置的Vercel token的名称
+        vercel-org-id: WhCraftMC  # 将这里的YOUR_ORG_ID改为你的Vercel团队ID
+        vercel-project-id: docs  # 将这里的YOUR_PROJECT_ID改为你的Vercel项目ID
