@@ -3,6 +3,13 @@ const api = require('../apis/github.apis');
 
 module.exports = {
   style: 'dark',
+  logo: {
+    alt: 'Meta Open Source Logo',
+    src: 'img/meta_oss_logo.png',
+    href: 'https://opensource.fb.com',
+    width: 160,
+    height: 51,
+  },
   links: [{
       title: '社区',
       items: [{
@@ -27,34 +34,6 @@ module.exports = {
         {
           label: 'GitHub',
           href: links.githubLink,
-        },
-      ],
-    },
-    {
-      title: 'Build Info',
-      items: [
-        {
-          async script() {
-            try {
-              const response = await fetch(
-                'https://api.github.com/repos/your-username/your-repo/commits'
-              );
-              const commits = await response.json();
-              const latestCommit = commits[0];
-              const commitSha = latestCommit.sha.slice(0, 7);
-              const commitUrl = latestCommit.html_url;
-              return {
-                label: commitSha,
-                link: commitUrl,
-              };
-            } catch (error) {
-              console.error('Failed to fetch commit info:', error);
-              return {
-                label: 'Failed to fetch commit info',
-                link: '',
-              };
-            }
-          },
         },
       ],
     },
