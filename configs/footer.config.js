@@ -5,10 +5,10 @@ module.exports = {
   style: 'dark',
   logo: {
     alt: 'Logo',
-    src: 'static/img/logo.svg',
+    src: 'img/tlogo.svg',
     href: links.WebSiteURL,
-    width: 160,
-    height: 51,
+    width: 148,
+    height: 48,
   },
   links: [{
       title: '社区',
