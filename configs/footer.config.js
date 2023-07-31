@@ -34,7 +34,6 @@ module.exports = {
       title: 'Build Info',
       items: [
         {
-          label: 'Commit Info',
           async script() {
             try {
               const response = await fetch(
@@ -45,13 +44,13 @@ module.exports = {
               const commitSha = latestCommit.sha.slice(0, 7);
               const commitUrl = latestCommit.html_url;
               return {
-                text: commitSha,
+                label: commitSha,
                 link: commitUrl,
               };
             } catch (error) {
               console.error('Failed to fetch commit info:', error);
               return {
-                text: 'Failed to fetch commit info',
+                label: 'Failed to fetch commit info',
                 link: '',
               };
             }
