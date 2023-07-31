@@ -1,8 +1,8 @@
 const siteConfig  = require('./configs/site.config');
 const links = require('./configs/Links.config');
 
-const navBar = require('./configs/NavBar.config');
-const footer = require('./configs/Footer.config');
+const navBar = require('./configs/navbar.config');
+const footer = require('./configs/footer.config');
 
 const i18n = require('./configs/I18n.config');
 const theme = require('./configs/theme.config');
