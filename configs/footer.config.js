@@ -4,9 +4,9 @@ const api = require('../apis/github.apis');
 module.exports = {
   style: 'dark',
   logo: {
-    alt: 'Meta Open Source Logo',
-    src: 'img/meta_oss_logo.png',
-    href: 'https://opensource.fb.com',
+    alt: 'Logo',
+    src: 'static/img/logo.svg',
+    href: links.WebSiteURL,
     width: 160,
     height: 51,
   },
