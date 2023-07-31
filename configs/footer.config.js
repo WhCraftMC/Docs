@@ -57,6 +57,8 @@ module.exports = {
             }
           },
         },
+      ],
+    },
   ],
   copyright: `Copyright © ${new Date().getFullYear()} WhCraftMC Team. Built with Docusaurus & ${api.shortSha}`,
 }
