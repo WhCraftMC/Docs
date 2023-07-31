@@ -21,7 +21,6 @@ on:
         type: string
 
 env:
-  NODE_VERSION: "18"
   DEPLOY_PREVIEW: ${{ inputs.preview }}
   PREVIEW_URL: ${{ inputs.url }}
   PREVIEW_BASE_URL: ${{ inputs.baseurl }}
@@ -36,7 +35,7 @@ jobs:
       - name: "Setup Node ${{ env.NODE_VERSION }}"
         uses: actions/setup-node@v3
         with:
-          node-version: "${{ env.NODE_VERSION }}"
+          node-version: "18"
           cache: "npm"
       - name: "Install Dependencies"
         run: "npm install --immutable"
