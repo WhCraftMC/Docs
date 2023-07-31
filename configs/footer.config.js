@@ -1,4 +1,5 @@
 const links = require('./Links.config');
+const api = require('../apis/github.apis');
 
 module.exports = {
   style: 'dark',
@@ -30,5 +31,5 @@ module.exports = {
       ],
     },
   ],
-  copyright: `Copyright © ${new Date().getFullYear()} WhCraftMC Team. Built with Docusaurus.`,
+  copyright: `Copyright © ${new Date().getFullYear()} WhCraftMC Team. Built with Docusaurus & ${api.shortSha}`,
 }
