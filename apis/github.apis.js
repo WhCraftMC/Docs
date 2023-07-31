@@ -13,4 +13,4 @@ const CommitI = {
         const commitMessage = latestCommit.commit.message;
         const commitUrl = latestCommit.html_url;
     },
-},
+}
