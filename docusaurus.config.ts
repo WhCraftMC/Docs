@@ -1,12 +1,13 @@
-const siteConfig  = require('./configs/site.config');
-const links = require('./configs/Links.config');
+import links from './configs/Links.config';
+ 
+import navBar from './configs/navbar.config';
+import footer from './configs/footer.config';
 
-const navBar = require('./configs/navbar.config');
-const footer = require('./configs/footer.config');
+import i18n from './configs/I18n.config';
+import theme from './configs/theme.config';
+import presets from './configs/presets.config';
 
-const i18n = require('./configs/I18n.config');
-const theme = require('./configs/theme.config');
-const presets = require('./configs/presets.config')
+import siteConfig from './configs/site.config';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -52,11 +53,11 @@ const config = {
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   ({
     // Replace with your project's social card
-    image: theme.image,
+    //image: theme.image,
     navbar: navBar,
     footer: footer,
     prism: theme.prism,
   }),
 };
 
-module.exports = config;
+export default config;
