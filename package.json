@@ -1,14 +1,12 @@
 {
   "name": "docs",
   "version": "0.0.0",
-  "private": true,
-  "author": "whcraftmc",
   "scripts": {
-    "dev": "docusaurus start --no-open --no-minify --config ./docusaurus.config.ts",
+    "dev": "docusaurus start --no-open --no-minify",
     "start": "yarn build && yarn serve",
-    "build": "docusaurus build --config ./docusaurus.config.ts",
+    "build": "docusaurus build",
     "clear": "docusaurus clear",
-    "serve": "docusaurus serve --no-open --config ./docusaurus.config.ts",
+    "serve": "docusaurus serve --no-open",
     "swizzle": "docusaurus swizzle --typescript",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",

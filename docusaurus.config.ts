@@ -1,63 +1,157 @@
-import links from './configs/Links.config';
- 
-import navBar from './configs/navbar.config';
-import footer from './configs/footer.config';
+import remarkA11yEmoji from "@fec/remark-a11y-emoji";
+import { themes } from "prism-react-renderer";
+import isCI from "is-ci";
+import navbar from "./configs/navbar.config";
+import footer from "./configs/footer.config";
+import { env } from "process";
+import { Config } from "@docusaurus/types";
+import { Options } from "@docusaurus/plugin-content-docs";
 
-import i18n from './configs/I18n.config';
-import theme from './configs/theme.config';
-import presets from './configs/presets.config';
+const preview = env.VERCEL_ENV === "preview";
 
-import siteConfig from './configs/site.config';
+const url = (preview && `https://${env.VERCEL_URL}`) || "https://docs.whcraft.tk";
 
-/** @type {import('@docusaurus/types').Config} */
-const config = {
-  title: siteConfig.title,
-  tagline: siteConfig.tagline,
-  favicon: siteConfig.favicon,
+const docsCommon: Options = {
+  breadcrumbs: true,
+  editUrl: ({ versionDocsDirPath, docPath }) =>
+    `https://github.com/WhCraftMC/docs/blob/main/${versionDocsDirPath}/${docPath}`,
+  editCurrentVersion: true,
+  remarkPlugins: [remarkA11yEmoji],
+  showLastUpdateAuthor: true,
+  showLastUpdateTime: true,
+};
+
+const config: Config = {
+  // your docs settings.
+  title: "WhCraftMC Documentation",
+  tagline: "Documentation for all projects.",
+  favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: links.URL,
+  url: url,
 
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'WhCraftMC', // Usually your GitHub org/user name.
   projectName: 'Documentation', // Usually your repo name.
+  onBrokenLinks: isCI ? "throw" : "warn",
+  onBrokenMarkdownLinks: isCI ? "throw" : "warn",
+  onDuplicateRoutes: isCI ? "throw" : "warn",
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  trailingSlash: false,
+  noIndex: preview,
+  baseUrlIssueBanner: false,
 
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans"?
-  i18n: i18n,
+  clientModules: [
+    require.resolve("./static/css/custom.css"),
+    require.resolve("@fontsource/jetbrains-mono/index.css"),
+  ],
 
+  // WebPack Setting.
+  webpack: {
+    jsLoader: (isServer) => ({
+      loader: require.resolve("esbuild-loader"),
+      options: {
+        loader: "tsx",
+        target: isServer ? "node12" : "es2017",
+      },
+    }),
+  },
+
+  // MarkDown Setting.
+  markdown: {
+    mdx1Compat: {
+      comments: false,
+      admonitions: false,
+      headingIds: false,
+    },
+  },
+
+  themes: ["@docusaurus/theme-classic"],
+
+  // Plugins.
   plugins: [
-  ],
-
-  presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
-        docs: presets.docs,
-        theme: presets.theme,
-      }),
+      "content-docs",
+      {
+        ...docsCommon,
+        id: "fastlimbo",
+        path: "docs/fastlimbo",
+        routeBasePath: "/FastLimbo",
+        sidebarPath: require.resolve("./config/sidebars/fastlimbo.sidebars.ts"),
+      },
     ],
+    [
+      "content-docs",
+      {
+        ...docsCommon,
+        id: "misc",
+        path: "docs/misc",
+        routeBasePath: "/misc",
+        sidebarPath: require.resolve("./config/sidebars/misc.sidebars.ts"),
+      },
+    ],
+    [
+      "content-pages",
+      {
+        remarkPlugins: [remarkA11yEmoji],
+      },
+    ],
+    [
+      "@docusaurus/plugin-sitemap",
+      {
+        ignorePatterns: ["**/cat/**"],
+      },
+    ],
+    "@docusaurus/plugin-debug",
   ],
 
-  themeConfig:
-  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-  ({
+  i18n: {
+    defaultLocale: 'zh',
+    locales: ['zh'],
+    path: 'i18n',
+    localeConfigs: {
+      zh: {
+        label: '简体中文',
+        direction: 'ltr',
+        htmlLang: 'zh-Hans',
+        calendar: 'gregory',
+        path: 'zh-Hans',
+      },
+    },
+  },
+
+  // WebSite's ThemeConfigs.
+  themeConfig: {
     // Replace with your project's social card
-    //image: theme.image,
-    navbar: navBar,
+
+    colorMode: {
+      respectPrefersColorScheme: true,
+    },
+
+    navbar: navbar,
     footer: footer,
-    prism: theme.prism,
-  }),
+
+    prism: {
+      additionalLanguages: [
+        "batch",
+        "bash",
+        "git",
+        "java",
+        "javastacktrace",
+        "kotlin",
+        "groovy",
+        "log",
+        "toml",
+        "properties",
+      ],
+      theme: themes.vsDark,
+    },
+  },
 };
 
-export default config;
+export = config;

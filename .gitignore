@@ -19,4 +19,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Configs
 /configs/*.ts
+/configs/*.tsx
+
+# Docs
+/Docs/*.md
+/Docs/*.mdx

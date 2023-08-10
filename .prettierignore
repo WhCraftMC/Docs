@@ -1,0 +1,13 @@
+/.docusaurus
+/.vscode
+/.yarn
+/build
+/node_modules
+/.pnp*
+/*.js
+/*.js.map
+/configs/*.ts
+/configs/*.tsx
+/.meta
+/Docs/*.md
+/Docs/*.mdx
