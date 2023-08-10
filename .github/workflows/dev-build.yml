@@ -3,7 +3,7 @@ name: "Build Artifact(DEV)"
 on:
   push:
     branches:
-      - dev
+      - Dev
   workflow_call:
     inputs:
       preview:
