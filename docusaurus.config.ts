@@ -1,8 +1,8 @@
 import remarkA11yEmoji from "@fec/remark-a11y-emoji";
 import { themes } from "prism-react-renderer";
 import isCI from "is-ci";
-import navbar from "./configs/navbar.config";
-import footer from "./configs/footer.config";
+import navbar from "./configs/navbar.configs";
+import footer from "./configs/footer.configs";
 import { env } from "process";
 import { Config } from "@docusaurus/types";
 import { Options } from "@docusaurus/plugin-content-docs";
