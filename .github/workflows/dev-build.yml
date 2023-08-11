@@ -3,7 +3,7 @@ name: "Build Artifact(DEV)"
 on:
   push:
     branches:
-      - dev
+      - Dev
   workflow_call:
     inputs:
       preview:
@@ -37,10 +37,6 @@ jobs:
         with:
           node-version: "18"
           cache: "npm"
-      - name: "Install yarn"
-        run: "npm install --global yarn"
-      - name: "Install Dependencies"
-        run: "npm install --immutable"
       - name: "Install Dependencies(yarn)"
         run: "yarn"
       - name: "Build Docs"
