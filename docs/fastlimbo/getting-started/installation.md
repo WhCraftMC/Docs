@@ -6,10 +6,10 @@ description: 如何在本地安装并启动FastLimbo服务器。
 FastLimbo 本质上是一个 Jar 文件。
 
 ## 安装Java
-Velocity是用Java编写的，所以如果你还没有安装Java，在您继续之前需要需要安装  需要 Java 18 或更高版本。有关详细说明，请参阅我们的 Java 安装指南。
+FastLimbo是用Java编写的，所以如果你还没有安装Java，在您继续之前需要需要安装  需要 Java 18 或更高版本。有关详细说明，请参阅我们的 Java 安装指南。
 
 ## 下载FastLimbo
-下载 FastLimbo的Jar文件 后，移动 JAR文 件到专用文件夹中，或将其上传到您的服务器。
+下载 FastLimbo的Jar文件 后，移动 JAR文件 到专用文件夹中，或将其上传到您的服务器。
 
 ## 在 Windows 下启动
 在 Jar文件 所在的目录中创建start.bat,并写入以下内容:
