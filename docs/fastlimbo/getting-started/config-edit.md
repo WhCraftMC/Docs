@@ -76,3 +76,23 @@ brandName:
   enable: true # 是否启用
   content: 'FastLimboServer. \n Server Running' # 内容
 ```
+
+## 玩家信息转发
+在这里可以设置玩家信息转发功能，支持类型:
+1. LEGACY
+2. MODERN
+3. BUNGEE_GUARD
+```yml
+# Player information forwarding support.
+# Available types:
+#  - NONE
+#  - LEGACY
+#  - MODERN
+#  - BUNGEE_GUARD
+# Don't use secret if you not use MODERN type.
+infoForwarding:
+  type: NONE # 类型
+  secret: '<YOUR_SECRET_HERE>' # 你的SECRET
+  tokens:
+    - '<BUNGEE_GUARD_TOKEN>' # 你的 BUNGEE GURAD TOKEN
+```
