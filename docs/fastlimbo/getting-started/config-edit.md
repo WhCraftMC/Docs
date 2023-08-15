@@ -1,3 +1,7 @@
+---
+description: 服务器配置的详解。
+---
+
 # 配置文件详解
 配置文件采用YML，推荐使用VS Code进行修改。
 您可以从这里大致了解配置文件。
@@ -77,7 +81,7 @@ brandName:
   content: 'FastLimboServer. \n Server Running' # 内容
 ```
 
-## 玩家信息转发
+## 玩家信息转发设置
 在这里可以设置玩家信息转发功能，支持类型:
 1. LEGACY
 2. MODERN
@@ -95,4 +99,45 @@ infoForwarding:
   secret: '<YOUR_SECRET_HERE>' # 你的SECRET
   tokens:
     - '<BUNGEE_GUARD_TOKEN>' # 你的 BUNGEE GURAD TOKEN
+```
+
+## 连接超时设置
+在这里你可以设置连接超时时间(单位: ms)。
+```yml
+# Connection read timeout (milliseconds)。
+readTimeout: 30000 # 超时时间(ms)
+```
+
+## 日志输出设置
+在这里你可以设置输出日志的等级，不同等级显示的内容如下：
+1. 0:显示错误
+2. 1:显示错误、警告
+3. 2:显示错误、警告、信息(推荐在生产环境中使用)
+4. 3:显示错误、警告、信息、debug信息(推荐开发环境使用)
+```yml
+# Define the log level. Default usage level 2.
+# Log levels:
+# 0 - Display only errors
+# 1 - Display errors, warnings
+# 2 - Display errors, warnings, info
+# 3 - Display errors, warnings, info, debug
+debugLevel: 2
+```
+
+## netty设置
+:::caution[如果你不知道这是什么，请不要修改。]
+
+若你在不了解此设置的情况下修改，可能会产生意想不到的结果。
+
+:::
+在这里你可以修改netty设置，如: 是否使用Epoll、线程池线程量。
+```yml
+# Warning! If you are not completely sure what this is, do not modify the parameters of this block!
+netty:
+  # If possible, please use Linux native transfer type
+  useEpoll: true # 是否启用Epoll
+  # EventLoopGroup threads
+  threads:
+    bossGroup: 1 # bossG的线程数量
+    workerGroup: 4 # workerG的线程数量
 ```
