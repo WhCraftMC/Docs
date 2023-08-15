@@ -21,6 +21,35 @@ const fastlimbo: SidebarsConfig = {
           },
           items: [],
         },
+        {
+          type: "category",
+          label: "配置详解",
+          link: {
+            type: "doc",
+            id: "getting-started/config-edit",
+          },
+          items: [],
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "开发",
+      collapsed: true,
+      link: {
+        type: "doc",
+        id: "develop/README",
+      },
+      items: [
+        {
+          type: "category",
+          label: "创建一个插件",
+          link: {
+            type: "doc",
+            id: "develop/create-a-plugin",
+          },
+          items: [],
+        },
       ],
     },
   ],
