@@ -64,7 +64,7 @@ const fastlimbo: SidebarsConfig = {
               label: "玩家API",
               link: {
                 type: "doc",
-                id: "develop/api/player.md",
+                id: "develop/api/Player",
               },
               items: [],
             },
