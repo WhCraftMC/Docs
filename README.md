@@ -1,10 +1,5 @@
 # Website
 
-![Build-Dev](https://github.com/WhCraftMC/Docs/actions/workflows/dev-build/badge.svg)
-![Build-Main](https://github.com/WhCraftMC/Docs/actions/workflows/main-build/badge.svg)
-
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
-
 ### Installation
 
 ```
