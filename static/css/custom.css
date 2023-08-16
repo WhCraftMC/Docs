@@ -4,6 +4,9 @@
  * work well for content-centric websites.
  */
 
+ /* HarmonyOS font */
+ @import url("https://s1.hdslb.com/bfs/static/jinkela/long/font/regular.css");
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: rgb(0,125,250);
@@ -12,8 +15,7 @@
 
   --ifm-code-font-size: 95%;
 
-  --ifm-font-family-monospace: "JetBrains Mono", "SFMono-Regular", "Menlo", "Consolas",
-    "Liberation Mono", monospace;
+  --ifm-font-family-monospace: "HarmonyOS_Regular";
 }
 
 html[data-theme="dark"] {
