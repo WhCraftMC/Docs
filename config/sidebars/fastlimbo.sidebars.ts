@@ -59,6 +59,15 @@ const fastlimbo: SidebarsConfig = {
             id: "develop/api/README",
           },
           items: [
+            {
+              type: "category",
+              label: "玩家API",
+              link: {
+                type: "doc",
+                id: "develop/api/Player",
+              },
+              items: [],
+            },
           ],
         },
       ],
