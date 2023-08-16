@@ -50,6 +50,17 @@ const fastlimbo: SidebarsConfig = {
           },
           items: [],
         },
+        {
+          type: "category",
+          label: "API",
+          collapsed: true,
+          link: {
+            type: "doc",
+            id: "develop/api/README",
+          },
+          items: [
+          ],
+        },
       ],
     },
   ],

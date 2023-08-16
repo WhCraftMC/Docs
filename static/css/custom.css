@@ -15,7 +15,8 @@
 
   --ifm-code-font-size: 95%;
 
-  --ifm-font-family-monospace: "HarmonyOS_Regular";
+  --ifm-font-family-monospace: "HarmonyOS_Regular", "JetBrains Mono", "SFMono-Regular", "Menlo", "Consolas",
+  "Liberation Mono", monospace;
 }
 
 html[data-theme="dark"] {
